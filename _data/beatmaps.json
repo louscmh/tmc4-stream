@@ -1,0 +1,19 @@
+[
+    { "beatmapId": 4191720, "pick": "RC1", "modpool": "Rice"},
+    { "beatmapId": 4260723, "pick": "RC2", "modpool": "Rice"},
+    { "beatmapId": 4451972, "pick": "RC3", "modpool": "Rice"},
+    { "beatmapId": 1245003, "pick": "RC4", "modpool": "Rice"},
+    { "beatmapId": 2120381, "pick": "RC5", "modpool": "Rice"},
+    { "beatmapId": 2698218, "pick": "RC6", "modpool": "Rice"},
+    { "beatmapId": 1958309, "pick": "RC7", "modpool": "Rice"},
+    { "beatmapId": 4198331, "pick": "LN1", "modpool": "Long Note"},
+    { "beatmapId": 4538482, "pick": "LN2", "modpool": "Long Note"},
+    { "beatmapId": 2680280, "pick": "LN3", "modpool": "Long Note"},
+    { "beatmapId": 3513203, "pick": "LN4", "modpool": "Long Note"},
+    { "beatmapId": 1968373, "pick": "HB1", "modpool": "Hybrid"},
+    { "beatmapId": 4233875, "pick": "HB2", "modpool": "Hybrid"},
+    { "beatmapId": 4257290, "pick": "HB3", "modpool": "Hybrid"},
+    { "beatmapId": 4115385, "pick": "SV1", "modpool": "Velocity"},
+    { "beatmapId": 2798530, "pick": "SV2", "modpool": "Velocity"},
+    { "beatmapId": 1230814, "pick": "TB", "modpool": "Tiebreaker"}
+]

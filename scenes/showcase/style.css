@@ -1,0 +1,238 @@
+@font-face {
+    font-family: "JosefinSans-Bold";
+    src: url("../../_shared_assets/fonts/JosefinSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: "JosefinSans-ExtraLight";
+    src: url("../../_shared_assets/fonts/JosefinSans-ExtraLight.ttf");
+}
+
+@font-face {
+    font-family: "JosefinSans-Regular";
+    src: url("../../_shared_assets/fonts/JosefinSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "JosefinSans-Light";
+    src: url("../../_shared_assets/fonts/JosefinSans-Light.ttf");
+}
+
+@font-face {
+    font-family: "Aosagi";
+    src: url("../../_shared_assets/fonts/YDWaosagi.otf");
+}
+
+
+#main {
+    font-family: "JosefinSans-Bold";
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#asset_1, #asset_2, #asset_3, #bg, #fg {
+    position: absolute;
+}
+
+#asset_1, #asset_2, #asset_3 {
+    z-index: 5;
+}
+
+#fg {
+    z-index: 1;
+}
+
+#bg {
+    z-index: 0;
+}
+
+#modpoolDetails {
+    z-index: 3;
+    position: absolute;
+    left:1316px;
+    top:240px;
+    height:52px;
+    width:fit-content;
+    background-color: #873838;
+    font-family: "JosefinSans-Light";
+    border-radius: 15px;
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 7px 7px rgba(0, 0, 0, 0.5);
+}
+
+#modpoolText {
+    font-size: 41px;
+    margin-top:6px;
+    margin-inline: 18px;
+}
+
+#mappoolDetails {
+    z-index: 3;
+    position: absolute;
+    left:1310px;
+    top:315px;
+    height:520px;
+    width:460px;
+    /* background-color: rgba(0,255,0,0.2); */
+    font-family: "JosefinSans-Regular";
+    color: white;
+    display:flex;
+    flex-direction: column;
+    margin-inline: 20px;
+    padding-top:50px;
+    overflow:hidden;
+	white-space: nowrap;
+}
+
+#bgDetails {
+    z-index: 2;
+    position: absolute;
+    left:1310px;
+    top:114px;
+    height:150px;
+    width:500px;
+    /* background-color: rgba(0,255,0,0.2); */
+    border-radius: 20px;
+    display:flex;
+}
+
+#bgFrame {
+    opacity: 0.5;
+    background-color: #3D0C0C;
+    position:absolute;
+    height:150px;
+    width:500px;
+    border-radius: 20px;
+}
+
+#bgSource {
+    z-index: 1;
+    opacity: 0.5;
+    position:absolute;
+    height:150px;
+    width:500px;
+    border-radius: 20px;
+    /* background-image: url("../../_shared_assets/design/main_banner.png"); */
+	object-fit: cover;
+	object-position: center;
+}
+
+#songTitle, #songTitleDelay {
+    font-size: 50px;
+    font-family: "JosefinSans-Bold";
+    height:55px;
+    width:fit-content;
+}
+
+#artistTitle, #artistTitleDelay {
+    font-size: 24px;
+    height:26.5px;
+    width:fit-content;
+}
+
+#difficultyTitle, #difficultyTitleDelay {
+    font-size:32px;
+    margin-top:60px;
+    height:36px;
+    width:fit-content;
+}
+
+#songTitleDelay, #artistTitleDelay, #difficultyTitleDelay {
+    display: none;
+}
+
+#mapperTitle {
+    font-size:32px;
+    margin-top:40px;
+    height:40px;
+}
+
+#stats {
+    font-size:32px;
+    margin-top:76px;
+    display:flex;
+    flex-direction: row;
+}
+
+#statsOne {
+    width:234px;
+}
+
+#od,#length {
+    margin-top: 34px;
+}
+
+#pickQueue {
+    z-index: 3;
+    position: absolute;
+    left:1285px;
+    top:868px;
+    height:100px;
+    width:550px;
+    /* background-color: rgba(0,255,0,0.2); */
+    font-family: "Aosagi";
+    color: white;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+#center {
+    font-size: 84px;
+    width: 190px;
+    text-align: center;
+}
+
+#leftTwo, #rightTwo {
+    font-size: 40px;
+    margin-top:5px;
+    margin-inline:10px;
+    width: 100px;
+    text-align: center;
+}
+
+#leftTwo, #rightTwo {
+    opacity:0.5;
+}
+
+#sceneTransition {
+    font-family: "JosefinSans-Bold";
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#transitionVideo {
+    width:1740px; 
+    height:900px; 
+    object-fit: cover;
+    z-index: 4;
+}
+
+@keyframes scrollText {
+	0% {
+	  transform: translateX(100%);
+	}
+	100% {
+	  transform: translateX(-100%);
+	}
+}
+
+
+

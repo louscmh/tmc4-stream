@@ -1,0 +1,11 @@
+[
+    { "time": "2025-01-14 14:00", "stage": "Test" },
+    { "time": "2025-01-19 12:00", "stage": "Qualifiers" },
+    { "time": "2025-01-26 12:00", "stage": "Group Stage" },
+    { "time": "2025-02-16 12:00", "stage": "Round of 32" },
+    { "time": "2025-02-23 12:00", "stage": "Round of 16" },
+    { "time": "2025-03-02 12:00", "stage": "Quarterfinals" },
+    { "time": "2025-03-09 12:00", "stage": "Semifinals" },
+    { "time": "2025-03-16 12:00", "stage": "Finals" },
+    { "time": "2025-03-23 12:00", "stage": "Grand Finals" }
+]

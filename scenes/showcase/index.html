@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../_shared_assets/deps/reconnecting-websocket.min.js"></script>
+</head>
+
+<body>
+  <div id="main">
+    <img id="asset_3" src="../../_shared_assets/design/mappool_text.png">
+    <!-- <img id="asset_2" src="../../_shared_assets/design/right_flower.png">
+    <img id="asset_1" src="../../_shared_assets/design/left_flower.png"> -->
+    <div id="sceneTransition">
+      <video id="transitionVideo" muted playsinline>
+        <source src="../../_shared_assets/design/showcase_stinger.webm" type="video/webm">
+      </video>
+    </div>
+    <div id="modpoolDetails">
+      <div id="modpoolText">Hybrid</div>
+    </div>
+    <div id="bgDetails">
+      <div id="bgFrame"></div>
+      <img id="bgSource">
+    </div>
+    <div id="mappoolDetails">
+      <div id="songTitle">Song Title</div>
+      <div id="songTitleDelay"></div>
+      <div id="artistTitle">Artist Title</div>
+      <div id="artistTitleDelay"></div>
+      <div id="difficultyTitle">Difficulty Name</div>
+      <div id="difficultyTitleDelay"></div>
+      <div id="mapperTitle">Mapper Name</div>
+      <div id="stats">
+        <div id="statsOne">
+          <div id="sr">00.00*</div>
+          <div id="od">0.0</div>
+        </div>
+        <div id="statsTwo">
+          <div id="bpm">000-000</div>
+          <div id="length">00:00</div>
+        </div>
+      </div>
+    </div>
+    <div id="pickQueue">
+      <div id="leftTwo">>>></div>
+      <div id="center">RC1</div>
+      <div id="rightTwo">RC2</div>
+    </div>
+    <img id="fg" src="../../_shared_assets/design/mappool_frame.png">
+    <img id="bg" src="../../_shared_assets/design/mappool_bg.png">
+  </div>
+	<script src="index.js"></script>
+  </body>
+    
+  </html>
