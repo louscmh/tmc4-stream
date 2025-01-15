@@ -184,7 +184,7 @@ function toggleEnding() {
     showcaseScene.style.zIndex = 5;
     showcaseScene.style.transform = "scale(1)";
     showcaseScene.style.clipPath = "";
-    showcaseScene.style.animation = "endingIn 1.5s cubic-bezier(0.000, 0.125, 0.000, 1.005)";
+    showcaseScene.style.animation = "endingIn 2s cubic-bezier(0.000, 0.125, 0.000, 1.005)";
     showcaseScene.style.opacity = 1;
 
     setTimeout(function() {
@@ -192,7 +192,7 @@ function toggleEnding() {
         side.style.animation = "endingScaleIn 1s  cubic-bezier(0.000, 0.990, 0.320, 1.010)";
         center.style.opacity = 1;
         center.style.animation = "endingScaleInTwo 1s  cubic-bezier(0.000, 0.990, 0.320, 1.010)";
-    },1700);
+    },2200);
 };
 
 function fadeOut() {
