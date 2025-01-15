@@ -19,6 +19,11 @@ let dates = [];
         jsonData.map((stage) => {
             dates.push(stage);
         });
+        [currentStage, stageTime] = await getCurrentStage()
+        console.log(currentStage);
+        console.log(stageTime);
+        stageElement.innerHTML = currentStage;
+        startCountdown(stageTime);
     } catch (error) {
         console.error("Could not read JSON file", error);
     }
@@ -61,16 +66,6 @@ showcaseButton.onmouseleave = function() {
 	showcaseButton.style.transform = "translateY(0px)";
 }
 
-setTimeout(async function() {
-    if (currentStage != getCurrentStage()) {
-        [currentStage, stageTime] = await getCurrentStage()
-        console.log(currentStage);
-        console.log(stageTime);
-        stageElement.innerHTML = currentStage;
-        startCountdown(stageTime);
-    }
-}, 2000)
-
 async function getCurrentStage() {
     try {
         var date = new Date();
@@ -78,7 +73,7 @@ async function getCurrentStage() {
         var month = date.getUTCMonth() + 1;
         var year = date.getUTCFullYear();
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < dates.length; i++) {
             let stage = dates[i];
             let stageDate = parseDateTime(stage["time"]);
 
@@ -91,10 +86,10 @@ async function getCurrentStage() {
             }
         }
 
-        return "No Stage Detected";
+        return ["No Stage Detected",null];
     } catch (e) {
         console.error("An error occurred:", e);
-        return "Error";
+        return ["Error",null];
     }
 }
 
