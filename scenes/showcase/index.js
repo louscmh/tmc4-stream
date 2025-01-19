@@ -52,6 +52,7 @@ let stinger = document.getElementById("transitionVideo");
 
 // PLACEHOLDER VARS /////////////////////////////////////////////////////////////////
 let currentFile = "";
+let currentStats;
 let currentStage;
 let tempBG;
 
@@ -59,8 +60,11 @@ socket.onmessage = event => {
     let data = JSON.parse(event.data);
 
     let file = data.menu.bm.path.file;
-    if (currentFile != file) {
+    let tempStats = data.menu.bm.stats;
+    
+    if (currentFile != file && currentStats != tempStats) {
         currentFile = file;
+        currentStats = tempStats;
         stinger.play();
         setTimeout(function() {
             updateDetails(data);
