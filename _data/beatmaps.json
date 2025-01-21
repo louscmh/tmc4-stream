@@ -1,20 +1,8 @@
 [
-    { "beatmapId": 4793933, "pick": "RC1", "modpool": "Rice"},
-    { "beatmapId": 4793741, "pick": "RC2", "modpool": "Rice"},
-    { "beatmapId": 3294142, "pick": "RC3", "modpool": "Rice"},
-    { "beatmapId": 4793559, "pick": "RC4", "modpool": "Rice"},
-    { "beatmapId": 4274921, "pick": "RC5", "modpool": "Rice"},
-    { "beatmapId": 4793969, "pick": "RC6", "modpool": "Rice"},
-    { "beatmapId": 4793983, "pick": "RC7", "modpool": "Rice"},
-    { "beatmapId": 4793954, "pick": "LN1", "modpool": "Long Note"},
-    { "beatmapId": 4014334, "pick": "LN2", "modpool": "Long Note"},
-    { "beatmapId": 4793962, "pick": "LN3", "modpool": "Long Note"},
-    { "beatmapId": 4793964, "pick": "LN4", "modpool": "Long Note"},
-    { "beatmapId": 1968373, "pick": "HB1", "modpool": "Hybrid"},
-    { "beatmapId": 4793971, "pick": "HB2", "modpool": "Hybrid"},
-    { "beatmapId": 4793974, "pick": "HB3", "modpool": "Hybrid"},
-    { "beatmapId": 4793984, "pick": "HB4", "modpool": "Hybrid"},
-    { "beatmapId": 4793979, "pick": "SV1", "modpool": "Velocity"},
-    { "beatmapId": 4793998, "pick": "SV2", "modpool": "Velocity"},
-    { "beatmapId": 4793996, "pick": "TB", "modpool": "Tiebreaker"}
+    { "beatmapId": 4942637, "pick": "RC1", "modpool": "Stage 1"},
+    { "beatmapId": 4942587, "pick": "LN1", "modpool": "Stage 2"},
+    { "beatmapId": 4942674, "pick": "LN2", "modpool": "Stage 3"},
+    { "beatmapId": 4942651, "pick": "RC2", "modpool": "Stage 4"},
+    { "beatmapId": 4942638, "pick": "RC3", "modpool": "Stage 5"},
+    { "beatmapId": 4942617, "pick": "HB1", "modpool": "Stage 6"}
 ]

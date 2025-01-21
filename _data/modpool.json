@@ -1,0 +1,5 @@
+[
+   {"modpool": "rice", "stages": ["Stage 1", "Stage 4", "Stage 5"]},
+   {"modpool": "ln", "stages": ["Stage 2", "Stage 3"]},
+   {"modpool": "hybrid", "stages": ["Stage 6"]}
+]

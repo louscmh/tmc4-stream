@@ -1,0 +1,353 @@
+@font-face {
+    font-family: "JosefinSans-Bold";
+    src: url("../../_shared_assets/fonts/JosefinSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: "JosefinSans-ExtraLight";
+    src: url("../../_shared_assets/fonts/JosefinSans-ExtraLight.ttf");
+}
+
+@font-face {
+    font-family: "JosefinSans-Regular";
+    src: url("../../_shared_assets/fonts/JosefinSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "JosefinSans-Light";
+    src: url("../../_shared_assets/fonts/JosefinSans-Light.ttf");
+}
+
+@font-face {
+    font-family: "Aosagi";
+    src: url("../../_shared_assets/fonts/YDWaosagi.otf");
+}
+
+
+#main {
+    font-family: "JosefinSans-Bold";
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color:white;
+}
+
+#fg {
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index: 1;
+}
+
+#bg {
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index: 0;
+}
+
+#team {
+    position:absolute;
+    z-index:2;
+    left: 195.3459px;
+    top: 260.9605px;
+    width:321.4286px;
+    padding-inline:20px;
+    display:flex;
+    flex-direction: column;
+    overflow:hidden;
+}
+
+#seed {
+    display:flex;
+    height: fit-content;
+    align-items: end;
+    font-family: "Aosagi";
+    margin-top:20px;
+}
+
+#seedSection {
+    height:170px;
+}
+
+#seedNumber {
+    font-size:90px;
+    margin-left:-5px;
+    letter-spacing: -5px;
+}
+
+#seedText {
+    font-size:26px;
+    margin-left:0px;
+    margin-bottom:4px;
+}
+
+#teamFlag {
+    width:108px;
+    height:56px;
+    background-color: white;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#teamName {
+    font-size:34.3px;
+    margin-top:10px;
+    width:281.4286px;
+}
+
+#teamSection {
+    height:205px;
+}
+
+.player {
+    display:flex;
+    margin-bottom:7px;
+}
+
+.playerPic {
+    width:47.6px;
+    height:47.6px;
+    /* background-color: white; */
+    border-radius: 10px;
+    margin-right:8px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.playerDetails {
+    display:flex;
+    flex-direction: column;
+}
+
+.playerName {
+    font-size:17.14px;
+    font-family:"JosefinSans-Regular";
+    margin-top:2px;
+}
+
+.playerRank {
+    font-size:17.14px;
+    font-family:"JosefinSans-ExtraLight";
+}
+
+#result {
+    position:absolute;
+    z-index:2;
+    left: 572.3441px;
+    top: 159.7447px;
+    width:1178.5714px;
+    display:flex;
+    flex-direction: column;
+}
+
+.result {
+    width:1178.5714px;
+    display:flex;
+    flex-direction: column;
+} 
+
+.modpool {
+    width:inherit;
+    height:42.8571px;
+    background-color: #D83535;
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:11px;
+}
+
+.modpoolTitle, .modpoolRank {
+    font-size:30px;
+    height:inherit;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline:10px;
+    margin-top:2px;
+}
+
+.map {
+    width: inherit;
+    height: 85.7143px;
+    background-color: #873838;
+    display:flex;
+    margin-bottom:11px;
+}
+
+.sourceBG {
+    height: 85.7143px;
+    width: inherit;
+    position:absolute;
+    z-index:0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    height: 85.7143px;
+    width: inherit;
+	background-image: linear-gradient(to right, rgba(135, 56, 56,0.7) ,rgba(135, 56, 56,1));
+	object-fit: cover;
+	object-position: center;
+    position:absolute;
+    z-index:1;
+}
+
+.leftDetail {
+    height: 85.7143px;
+    width: inherit;
+    position:absolute;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index:2;
+    padding-left: 14px;
+}
+
+.songTitle {
+    width:fit-content;
+    margin-top:9px;
+    font-size: 38.57px;
+}
+
+.artistTitle {
+    margin-top:-0.5px;
+    font-size: 25.71px;
+    font-family: "JosefinSans-Light";
+}
+
+.rightDetail {
+    height: 85.7143px;
+    width: inherit;
+    position:absolute;
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+    z-index:2;
+}
+
+.mapDetail {
+    width:fit-content;
+    margin-right: 14px;
+    display:flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.stageText {
+    margin-top:11px;
+    font-size:21.43px;
+    font-family: "JosefinSans-Light";
+}
+
+.mapRank {
+    margin-top:-1px;
+    font-size:53.57px;
+}
+
+.score {
+    font-size: 64.29px;
+    margin-top:16px;
+    margin-right:15px;
+}
+
+/* CONTROLLER */
+#controller {
+    position:absolute;
+    left:1920px;
+    top:0px;
+    background-color:rgb(47, 0, 0);
+    width:500px;
+    height:1080px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#buttons {
+    width:90%;
+    height:90%;
+    display:flex;
+    flex-direction: column;
+}
+
+.title {
+    font-family: "JosefinSans-ExtraLight";
+    color:white;
+    font-size:24px;
+    user-select: none; /* Disable text selection */
+}
+
+.button {
+    width:100%;
+    height:fit-content;
+    background-color: rgb(149, 59, 45);
+    margin-block:10px;
+    border-radius: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "JosefinSans-Bold";
+    color:white;
+    font-size:50px;
+    padding-top: 5px;
+    margin-bottom:15px;
+    text-align: center;
+    padding-block: 10px;
+    user-select: none; /* Disable text selection */
+    transition: ease-in-out 500ms;
+}
+
+@keyframes fadeOutRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

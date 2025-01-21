@@ -1,0 +1,162 @@
+[
+ {
+   "teamName": "team name that is quite long",
+   "teamFlag": "https://lous.s-ul.eu/dO4OgmnG",
+   "players": [
+      6231292,
+      6231292
+   ],
+   "seed": 1,
+   "overallRank": {
+      "rice": 1,
+      "ln": 1,
+      "hybrid": 1
+   },
+   "maps": [
+      {
+         "pick": "Stage 1",
+         "beatmapID": 4942637,
+         "score": 2000000,
+         "rank": 1
+      },
+      {
+         "pick": "Stage 4",
+         "beatmapID": 4942587,
+         "score": 2000000,
+         "rank": 1
+      },
+      {
+         "pick": "Stage 5",
+         "beatmapID": 4942674,
+         "score": 2000000,
+         "rank": 1
+      },
+      {
+         "pick": "Stage 2",
+         "beatmapID": 4942651,
+         "score": 2000000,
+         "rank": 1
+      },
+      {
+         "pick": "Stage 3",
+         "beatmapID": 4942638,
+         "score": 2000000,
+         "rank": 1
+      },
+      {
+         "pick": "Stage 6",
+         "beatmapID": 4942617,
+         "score": 2000000,
+         "rank": 1
+      }
+   ]
+},
+ {
+   "teamName": "team_2_1287123",
+   "teamFlag": "https://lous.s-ul.eu/dO4OgmnG",
+   "players": [
+      6088976,
+      6088976,
+      6231292,
+      6231292
+   ],
+   "seed": 2,
+   "overallRank": {
+      "rice": 2,
+      "ln": 2,
+      "hybrid": 3
+   },
+   "maps": [
+      {
+         "pick": "Stage 1",
+         "beatmapID": 4942637,
+         "score": 1500000,
+         "rank": 2
+      },
+      {
+         "pick": "Stage 4",
+         "beatmapID": 4942587,
+         "score": 1500000,
+         "rank": 2
+      },
+      {
+         "pick": "Stage 5",
+         "beatmapID": 4942674,
+         "score": 1500000,
+         "rank": 2
+      },
+      {
+         "pick": "Stage 2",
+         "beatmapID": 4942651,
+         "score": 1500000,
+         "rank": 2
+      },
+      {
+         "pick": "Stage 3",
+         "beatmapID": 4942638,
+         "score": 1500000,
+         "rank": 2
+      },
+      {
+         "pick": "Stage 6",
+         "beatmapID": 4942617,
+         "score": 1500000,
+         "rank": 2
+      }
+   ]
+},
+ {
+   "teamName": "team_3 that is last",
+   "teamFlag": null,
+   "players": [
+      6231292,
+      6231292,
+      6231292,
+      6231292
+   ],
+   "seed": 3,
+   "overallRank": {
+      "rice": 3,
+      "ln": 3,
+      "hybrid": 3
+   },
+   "maps": [
+      {
+         "pick": "Stage 1",
+         "beatmapID": 4942637,
+         "score": 1000000,
+         "rank": 3
+      },
+      {
+         "pick": "Stage 4",
+         "beatmapID": 4942587,
+         "score": 1000000,
+         "rank": 3
+      },
+      {
+         "pick": "Stage 5",
+         "beatmapID": 4942674,
+         "score": 1000000,
+         "rank": 3
+      },
+      {
+         "pick": "Stage 2",
+         "beatmapID": 4942651,
+         "score": 1000000,
+         "rank": 3
+      },
+      {
+         "pick": "Stage 3",
+         "beatmapID": 4942638,
+         "score": 1000000,
+         "rank": 3
+      },
+      {
+         "pick": "Stage 6",
+         "beatmapID": 4942617,
+         "score": 1000000,
+         "rank": 3
+      }
+   ]
+}
+]
