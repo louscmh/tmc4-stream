@@ -127,6 +127,9 @@ async function updateDetails(data) {
     makeScrollingText(beatmapTitle, beatmapTitleDelay,20,460,40);
     makeScrollingText(beatmapArtist, beatmapArtistDelay,20,460,40);
     makeScrollingText(difficultyTitle, difficultyTitleDelay,20,460,40);
+    adjustFont(pickID, 170,84);
+    adjustFont(pickIDLeft, 90,40);
+    adjustFont(pickIDRight, 90,40);
 }
 
 const parseTime = ms => {
@@ -154,4 +157,12 @@ async function makeScrollingText(title, titleDelay, rate, boundaryWidth, padding
         titleDelay.style.marginTop = `0px`;
 		title.style.paddingRight = "0px";
 	}
+}
+function adjustFont(title, boundaryWidth, originalFontSize) {
+    if (title.scrollWidth > boundaryWidth) {
+        let ratio = (title.scrollWidth/boundaryWidth);
+        title.style.fontSize = `${originalFontSize/ratio}px`;
+    } else {
+        title.style.fontSize = `${originalFontSize}px`;
+    }
 }

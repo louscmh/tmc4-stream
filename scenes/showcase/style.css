@@ -191,6 +191,9 @@
     font-size: 84px;
     width: 190px;
     text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #leftTwo, #rightTwo {
@@ -199,6 +202,9 @@
     margin-inline:10px;
     width: 100px;
     text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #leftTwo, #rightTwo {
