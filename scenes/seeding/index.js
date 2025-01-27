@@ -302,8 +302,8 @@ class Team {
             for(let i=0; i<modpools.length;i++) {
                 modpools[i].switch(seed.overallRank[modpools[i].modpoolAcronym]);
             }
-            seed.maps.map(async (map,index) => {
-                picks[index].switch(map);
+            seed.maps.map(async (map) => {
+                picks.find(pick => pick.stage === map.pick).switch(map);
             })
             await this.updateDetails(seedNumber, teamName, playersData);
             this.fadeIn();
