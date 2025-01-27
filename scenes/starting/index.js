@@ -40,19 +40,36 @@ let showcase_1 = document.getElementById("showcase_asset_1");
 let showcase_2 = document.getElementById("showcase_asset_2");
 
 // BUTTONS //////////////////////////////////////////
+// showcaseButton.addEventListener("click", function(event) {
+//     if (currentPhase == "starting") {
+//         showcaseButton.innerHTML = "SHOW CLIENT";
+//         showcaseButton.style.backgroundColor = "#3f3f3f";
+//         toggleShowcase();
+//     } else if (currentPhase == "showcase") {
+//         currentPhase = "maps";
+//         showcaseButton.innerHTML = "ENDING";
+//         showcaseButton.style.backgroundColor = "rgb(149, 59, 45)";
+//         stinger.play();
+//         setTimeout(function() {
+//             document.getElementById("main").style.opacity = "0";
+//         },300)
+//         // fadeOut();
+//     } else if (currentPhase == "maps") {
+//         currentPhase = "ending";
+//         toggleEnding();
+//     }
+// })
 showcaseButton.addEventListener("click", function(event) {
     if (currentPhase == "starting") {
         showcaseButton.innerHTML = "SHOW CLIENT";
         showcaseButton.style.backgroundColor = "#3f3f3f";
-        toggleShowcase();
-    } else if (currentPhase == "showcase") {
+        toggleSeeding();
+    } else if (currentPhase == "seeding") {
         currentPhase = "maps";
-        showcaseButton.innerHTML = "ENDING";
+        showcaseButton.innerHTML = "SEEDING";
         showcaseButton.style.backgroundColor = "rgb(149, 59, 45)";
-        stinger.play();
-        setTimeout(function() {
-            document.getElementById("main").style.opacity = "0";
-        },300)
+        document.getElementById("main").style.animation = "opacityFadeOut 1s ease-in-out";
+        document.getElementById("main").style.opacity = "0";
         // fadeOut();
     } else if (currentPhase == "maps") {
         currentPhase = "ending";
@@ -138,6 +155,25 @@ function startCountdown(targetDate) {
     updateCountdown(); // Run immediately to avoid initial delay
 }
 
+function toggleSeeding() {
+    console.log("happened");
+    let countdownElement = document.getElementById("countdown");
+    let showcaseScene = document.getElementById("main");
+
+    countdownElement.style.animation = "countdownMove 1.5s ease-in-out";
+    countdownElement.style.transform = "scaleX(0.65437) translateY(1200px)";
+    countdownElement.style.opacity = "0";
+
+    setTimeout(function() {
+        showcaseScene.style.animation = "showcaseMove 2s cubic-bezier(0.000, 0.125, 0.000, 1.005)";
+        showcaseScene.style.transform = "scale(0.85)";
+        showcaseScene.style.clipPath = "inset(43px 0 43px 0)";
+        currentPhase = "seeding";
+        showcaseButton.style.backgroundColor = "#a3276d";
+    },1500);
+
+};
+
 function toggleShowcase() {
     console.log("happened");
     let countdownElement = document.getElementById("countdown");
@@ -149,7 +185,7 @@ function toggleShowcase() {
 
     setTimeout(function() {
         showcaseScene.style.animation = "showcaseMove 2s cubic-bezier(0.000, 0.125, 0.000, 1.005)";
-        showcaseScene.style.transform = "scale(0.906458333)";
+        showcaseScene.style.transform = "scale(0.85)";
         showcaseScene.style.clipPath = "inset(43px 0 43px 0)";
     },1500);
 

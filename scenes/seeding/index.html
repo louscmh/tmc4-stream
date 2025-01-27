@@ -10,6 +10,11 @@
 </head>
 
 <body>
+  <div id="sceneTransition">
+    <video id="transitionVideo" muted playsinline>
+      <source src="../../_shared_assets/design/showcase_stinger.webm" type="video/webm">
+    </video>
+  </div>
   <div id="main">
     <div id="team">
       <div id="seedSection">
@@ -19,7 +24,7 @@
         </div>
       </div>
       <div id="teamSection">
-        <div id="teamFlag"></div>
+        <!-- <div id="teamFlag"></div> -->
         <div id="teamName"></div>
       </div>
       <div id="teamMembers">
@@ -50,6 +55,10 @@
         <div class="title">SEED NAVIGATOR</div>
         <div class="button" id="controllerNextSeed">NEXT SEED</div>
         <div class="button" id="controllerPreviousSeed">PREVIOUS SEED</div>
+        <div class="button" id="controllerNext10Seed">NEXT 10 SEEDS</div>
+        <div class="button" id="controllerPrevious10Seed">PREVIOUS 10 SEEDS</div>
+        <div class="title">SCENE CHANGE</div>
+        <div class="button" id="controllerSceneChange">SWITCH TO SHOWCASE</div>
     </div>
   </div>
 	<script src="index.js"></script>

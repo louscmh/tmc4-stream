@@ -23,6 +23,11 @@
     src: url("../../_shared_assets/fonts/YDWaosagi.otf");
 }
 
+@font-face {
+    font-family: "LINE";
+    src: url("../../_shared_assets/fonts/LINESeedJP_TTF_Bd.ttf");
+}
+
 
 #main {
     font-family: "JosefinSans-Bold";
@@ -99,9 +104,12 @@
 }
 
 #teamName {
-    font-size:34.3px;
-    margin-top:10px;
+    font-family: "LINE";
+    font-size:34px;
+    overflow-wrap: break-word;
+    margin-top:2px;
     width:281.4286px;
+    line-height: 1.2;
 }
 
 #teamSection {
@@ -299,13 +307,35 @@
     align-items: center;
     font-family: "JosefinSans-Bold";
     color:white;
-    font-size:50px;
+    font-size:36px;
     padding-top: 5px;
     margin-bottom:15px;
     text-align: center;
     padding-block: 10px;
     user-select: none; /* Disable text selection */
     transition: ease-in-out 500ms;
+}
+
+
+#sceneTransition {
+    font-family: "JosefinSans-Bold";
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#transitionVideo {
+    width:1920px; 
+    height:1080px; 
+    object-fit: cover;
+	object-position: center;
+    z-index: 3;
 }
 
 @keyframes fadeOutRight {

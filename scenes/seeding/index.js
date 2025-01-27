@@ -52,6 +52,10 @@ let api;
 let controllerSeed = document.getElementById("controllerSeed");
 let controllerNextSeed = document.getElementById("controllerNextSeed");
 let controllerPreviousSeed = document.getElementById("controllerPreviousSeed");
+let controllerNext10Seed = document.getElementById("controllerNext10Seed");
+let controllerPrevious10Seed = document.getElementById("controllerPrevious10Seed");
+let stinger = document.getElementById("transitionVideo");
+let controllerSceneChange = document.getElementById("controllerSceneChange");
 
 // PLACEHOLDER VARS /////////////////////////////////////////////////////////////////
 let modAcronyms = ["rice Rice",'ln Long_Note',"hybrid Hybrid"];
@@ -92,15 +96,18 @@ class Modpool {
     updateRank(newRank) {
         document.getElementById(this.modpoolRank.id).innerHTML = `#${newRank}`;;
     }
-    switch(newRank) {
+    fadeOut() {
         let container = document.getElementById(this.modpool.id);
         container.style.animation = "fadeOutDown 1s ease-in-out";
         container.style.opacity = 0;
-        setTimeout(function() {
-            this.updateRank(newRank);
-            container.style.animation = "fadeInDown 1s ease-in-out";
-            container.style.opacity = 1;
-        }.bind(this),1500);
+    }
+    fadeIn() {
+        let container = document.getElementById(this.modpool.id);
+        container.style.animation = "fadeInDown 1s ease-in-out";
+        container.style.opacity = 1;
+    }
+    switch(newRank) {
+        this.updateRank(newRank);
     }
 }
 
@@ -181,30 +188,33 @@ class Map {
         document.getElementById(this.scoreContainer.id).innerHTML = mapData.score.toLocaleString('en-US');
         document.getElementById(this.mapRank.id).innerHTML = `#${mapData.rank}`;
     }
-    switch(mapData) {
+    fadeOut() {
         let container = document.getElementById(this.map.id);
         container.style.animation = "fadeOutDown 1s ease-in-out";
         container.style.opacity = 0;
-        setTimeout(function() {
-            this.updateDetails(mapData);
-            container.style.animation = "fadeInDown 1s ease-in-out";
-            container.style.opacity = 1;
-        }.bind(this),1500);
+    }
+    fadeIn() {
+        let container = document.getElementById(this.map.id);
+        container.style.animation = "fadeInDown 1s ease-in-out";
+        container.style.opacity = 1;
+    }
+    switch(mapData) {
+        this.updateDetails(mapData);
     }
 }
 
 class Team {
-    constructor(seedNumber,teamName,playersData,flagSource) {
+    constructor(seedNumber,teamName,playersData) {
         this.seed = seedNumber;
         this.team = teamName;
         this.playersData = playersData;
-        this.flagSource = flagSource;
+        // this.flagSource = flagSource;
         this.seedContainer = document.getElementById("seed");
         this.seedNumber = document.getElementById("seedNumber");
         this.teamSection = document.getElementById("teamSection");
         this.teamName = document.getElementById("teamName");
         this.teamMembers = document.getElementById("teamMembers");
-        this.teamFlag = document.getElementById("teamFlag");
+        // this.teamFlag = document.getElementById("teamFlag");
         this.seedText = document.getElementById("seedText");
         this.players = [];
     }
@@ -213,13 +223,15 @@ class Team {
         this.seedText.innerHTML = this.getNumberSuffix(Number(this.seed));
 
         this.teamName.innerHTML = this.team;
-        this.teamFlag.style.backgroundImage = this.flagSource != null ? `url(${this.flagSource})`:`url(../../_shared_assets/design/main_banner.png)`;
+        // this.teamFlag.style.backgroundImage = this.flagSource != null ? `url(${this.flagSource})`:`url(../../_shared_assets/design/main_banner.png)`;
 
         for (let i=0; i < 4; i++) {
             let player = new Player(i);
             player.generate(player);
-            let playerData = await this.getUserDataSet(this.playersData[i]);
-            player.updatePlayerDetails(`url("http://s.ppy.sh/a/${playerData.user_id}")`,playerData.username,playerData.pp_rank);
+            if (this.playersData[i] != null) {
+                let playerData = await this.getUserDataSet(this.playersData[i]);
+                player.updatePlayerDetails(`url("http://s.ppy.sh/a/${playerData.user_id}")`,playerData.username,playerData.pp_rank);
+            }
             this.players.push(player);
         }
     }
@@ -231,7 +243,7 @@ class Team {
                     params: {
                         k: api,
                         u: user_id,
-                        m: 0,
+                        m: 3,
                     },
                 })
             )["data"];
@@ -245,7 +257,7 @@ class Team {
         const lastTwoDigits = num % 100;
     
         if (lastTwoDigits >= 11 && lastTwoDigits <= 13) {
-            return num + 'th';
+            return 'th';
         }
     
         switch (lastDigit) {
@@ -259,32 +271,49 @@ class Team {
                 return 'th';
         }
     }
-    async updateDetails(seedNumber,teamName,playersData,flagSource) {
+    async updateDetails(seedNumber,teamName,playersData) {
         this.seed = seedNumber;
         this.team = teamName;
         this.playersData = playersData;
-        this.flagSource = flagSource;
+        // this.flagSource = flagSource;
         
         for (let i=0; i < 4; i++) {
-            if (i < playersData.length) {
+            if (this.playersData[i] != null) {
                 let playerData = await this.getUserDataSet(this.playersData[i]);
                 this.players[i].updatePlayerDetails(`url("http://s.ppy.sh/a/${playerData.user_id}")`,playerData.username,playerData.pp_rank);
-            } else {
-                this.players[i].setNull();
             }
         }
 
         this.seedNumber.innerHTML = this.seed;
         this.seedText.innerHTML = this.getNumberSuffix(Number(this.seed));
         this.teamName.innerHTML = this.team;
-        this.teamFlag.style.backgroundImage = this.flagSource != null ? `url(${this.flagSource})`:`url(../../_shared_assets/design/main_banner.png)`;
+        // this.teamFlag.style.backgroundImage = this.flagSource != null ? `url(${this.flagSource})`:`url(../../_shared_assets/design/main_banner.png)`;
         this.fadeIn();
     }
-    async switch(seedNumber,teamName,playersData,flagSource) {
+    async switch(seedNumber,teamName,playersData,modpools,seed) {
         this.fadeOut();
+        for(let i=0; i<modpools.length;i++) {
+            modpools[i].fadeOut();
+        }
+        seed.maps.map(async (map,index) => {
+            picks[index].fadeOut();
+        })
         setTimeout(async function() {
-            await this.updateDetails(seedNumber, teamName, playersData, flagSource);
-        }.bind(this), 1000);        
+            for(let i=0; i<modpools.length;i++) {
+                modpools[i].switch(seed.overallRank[modpools[i].modpoolAcronym]);
+            }
+            seed.maps.map(async (map,index) => {
+                picks[index].switch(map);
+            })
+            await this.updateDetails(seedNumber, teamName, playersData);
+            this.fadeIn();
+            for(let i=0; i<modpools.length;i++) {
+                modpools[i].fadeIn();
+            }
+            seed.maps.map(async (map,index) => {
+                picks[index].fadeIn();
+            })
+        }.bind(this),1000);
     }
     fadeIn() {        
         this.seedContainer.style.animation = "fadeInRight 1s ease-in-out";
@@ -365,7 +394,7 @@ function setupInitial() {
         picks.push(pick);
     })
 
-    teamController = new Team(lastSeed.seed,lastSeed.teamName,lastSeed.players,lastSeed.teamFlag);
+    teamController = new Team(lastSeed.seed,lastSeed.teamName,lastSeed.players);
     teamController.generate();
     controllerSeed.innerHTML = teamController.seed;
     currentSeed = teamController.seed;
@@ -403,13 +432,7 @@ async function adjustFont(title, boundaryWidth, originalFontSize) {
 async function updateSeed(currentSeed) {
     let seed = seedData.find(seed => seed["seed"] === currentSeed) ?? seedData[currentSeed-1];
     console.log(seed);
-    await teamController.switch(seed.seed,seed.teamName,seed.players,seed.teamFlag);
-    for(let i=0; i<modpools.length;i++) {
-        modpools[i].switch(seed.overallRank[modpools[i].modpoolAcronym]);
-    }
-    seed.maps.map(async (map,index) => {
-        picks[index].switch(map);
-    })
+    await teamController.switch(seed.seed,seed.teamName,seed.players,modpools,seed);
 }
 
 // BUTTONS //////////////////////////////////////////
@@ -425,6 +448,29 @@ controllerPreviousSeed.addEventListener("click", function(event) {
  controllerSeed.innerHTML = currentSeed;
  updateSeed(currentSeed);
 })
+controllerNext10Seed.addEventListener("click", function(event) {
+    if (currentSeed < 11) return;
+    currentSeed-=10;
+    controllerSeed.innerHTML = currentSeed;
+    updateSeed(currentSeed);
+})
+controllerPrevious10Seed.addEventListener("click", function(event) {
+    if (currentSeed >= seedData.length-9) return;
+    currentSeed+=10;
+    controllerSeed.innerHTML = currentSeed;
+    updateSeed(currentSeed);
+})
+let sceneController = "seed";
+controllerSceneChange.addEventListener("click", function(event) {
+    if (sceneController == "seed") {
+        sceneController = "showcase";
+        controllerSceneChange.style.display = "none";
+        stinger.play();
+        setTimeout(function() {
+            document.getElementById("main").style.opacity = 0;
+        },300);
+    }
+})
 controllerNextSeed.onmouseover = function() {
 	controllerNextSeed.style.transform = "translateY(-5px)";
 }
@@ -436,4 +482,22 @@ controllerPreviousSeed.onmouseover = function() {
 }
 controllerPreviousSeed.onmouseleave = function() {
 	controllerPreviousSeed.style.transform = "translateY(0px)";
+}
+controllerNext10Seed.onmouseover = function() {
+	controllerNext10Seed.style.transform = "translateY(-5px)";
+}
+controllerNext10Seed.onmouseleave = function() {
+	controllerNext10Seed.style.transform = "translateY(0px)";
+}
+controllerPrevious10Seed.onmouseover = function() {
+	controllerPrevious10Seed.style.transform = "translateY(-5px)";
+}
+controllerPrevious10Seed.onmouseleave = function() {
+	controllerPrevious10Seed.style.transform = "translateY(0px)";
+}
+controllerSceneChange.onmouseover = function() {
+	controllerSceneChange.style.transform = "translateY(-5px)";
+}
+controllerSceneChange.onmouseleave = function() {
+	controllerSceneChange.style.transform = "translateY(0px)";
 }
