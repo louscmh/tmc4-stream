@@ -1,11 +1,11 @@
 @font-face {
     font-family: "JosefinSans-Bold";
-    src: url("../../_shared_assets/fonts/JosefinSans-Bold.ttf");
+    src: url("/tmc4-stream/_shared_assets/fonts/JosefinSans-Bold.ttf");
 }
 
 @font-face {
     font-family: "JosefinSans-ExtraLight";
-    src: url("../../_shared_assets/fonts/JosefinSans-ExtraLight.ttf");
+    src: url("/tmc4-stream/_shared_assets/fonts/JosefinSans-ExtraLight.ttf");
 }
 
 #main {
