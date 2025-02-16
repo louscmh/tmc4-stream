@@ -1,15 +1,17 @@
 [
-    { "time": "2025-01-15 23:00", "stage": "Testing - 15/1" },
-    { "time": "2025-01-16 23:00", "stage": "Testing - 16/1" },
-    { "time": "2025-01-17 23:00", "stage": "Testing - 17/1" },
-    { "time": "2025-01-18 23:00", "stage": "Testing - 18/1" },
+    { "time": "2025-01-15 12:00", "stage": "Testing" },
     { "time": "2025-01-19 12:00", "stage": "Qualifiers" },
-    { "time": "2025-01-27 23:00", "stage": "Testing - 27/1" },
     { "time": "2025-01-28 12:00", "stage": "Group Stage" },
-    { "time": "2025-02-16 12:00", "stage": "Round of 32" },
-    { "time": "2025-02-23 12:00", "stage": "Round of 16" },
-    { "time": "2025-03-02 12:00", "stage": "Quarterfinals" },
-    { "time": "2025-03-09 12:00", "stage": "Semifinals" },
-    { "time": "2025-03-16 12:00", "stage": "Finals" },
-    { "time": "2025-03-23 12:00", "stage": "Grand Finals" }
+    { "time": "2025-02-16 12:00", "stage": "Round of 32", "showcase": "../../_shared_assets/design/mappool_text_ro32.png"},
+    { "time": "2025-02-17 12:00", "stage": "Round of 32", "showcase": "../../_shared_assets/design/mappool_text_ro32.png"},
+    { "time": "2025-02-23 12:00", "stage": "Round of 16", "showcase": "../../_shared_assets/design/mappool_text_ro16.png" },
+    { "time": "2025-02-24 12:00", "stage": "Round of 16", "showcase": "../../_shared_assets/design/mappool_text_ro16.png" },
+    { "time": "2025-03-02 12:00", "stage": "Quarterfinals", "showcase": "../../_shared_assets/design/mappool_text_qf.png" },
+    { "time": "2025-03-03 12:00", "stage": "Quarterfinals", "showcase": "../../_shared_assets/design/mappool_text_qf.png" },
+    { "time": "2025-03-09 12:00", "stage": "Semifinals", "showcase": "../../_shared_assets/design/mappool_text_sf.png" },
+    { "time": "2025-03-10 12:00", "stage": "Semifinals", "showcase": "../../_shared_assets/design/mappool_text_sf.png" },
+    { "time": "2025-03-16 12:00", "stage": "Finals", "showcase": "../../_shared_assets/design/mappool_text_f.png" },
+    { "time": "2025-03-17 12:00", "stage": "Finals", "showcase": "../../_shared_assets/design/mappool_text_f.png" },
+    { "time": "2025-03-23 12:00", "stage": "Grand Finals", "showcase": "../../_shared_assets/design/mappool_text_gf.png" },
+    { "time": "2025-03-24 12:00", "stage": "Grand Finals", "showcase": "../../_shared_assets/design/mappool_text_gf.png" }
 ]

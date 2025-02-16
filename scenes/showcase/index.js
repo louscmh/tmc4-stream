@@ -29,6 +29,24 @@ let beatmaps = [];
 })();
 console.log(beatmapSet);
 
+// SHOWCASE DATES DATA /////////////////////////////////////////////////////////////////
+let dates = [];
+let asset_3 = document.getElementById("asset_3");
+(async () => {
+    try {
+        const jsonData = await $.getJSON("../../_data/showcase_dates.json");
+        jsonData.map((stage) => {
+            dates.push(stage);
+        });
+        [currentStage, stageAsset, stageTime] = await getCurrentStage()
+        console.log(currentStage);
+        console.log(stageTime);
+        console.log(stageAsset);
+    } catch (error) {
+        console.error("Could not read JSON file", error);
+    }
+})();
+
 // HTML VARS /////////////////////////////////////////////////////////////////
 let beatmapTitle = document.getElementById("songTitle");
 let beatmapArtist = document.getElementById("artistTitle");
@@ -165,4 +183,41 @@ function adjustFont(title, boundaryWidth, originalFontSize) {
     } else {
         title.style.fontSize = `${originalFontSize}px`;
     }
+}
+
+async function getCurrentStage() {
+    try {
+        var date = new Date();
+        var day = date.getUTCDate();
+        var month = date.getUTCMonth() + 1;
+        var year = date.getUTCFullYear();
+
+        for (let i = 0; i < dates.length; i++) {
+            let stage = dates[i];
+            let stageDate = parseDateTime(stage["time"]);
+
+            let stageDay = stageDate.getUTCDate();
+            let stageMonth = stageDate.getUTCMonth() + 1;
+            let stageYear = stageDate.getUTCFullYear();
+
+            if (stageDay === day && stageMonth === month && stageYear === year) {
+                asset_3.setAttribute("src",stage["showcase"]);
+                return [stage["stage"], stage["showcase"], stageDate];
+            }
+        }
+
+        return ["No Stage Detected",null];
+    } catch (e) {
+        console.error("An error occurred:", e);
+        return ["Error",null];
+    }
+}
+
+function parseDateTime(dateTimeString) {
+    // console.log(dateTimeString);
+    if (dateTimeString == "") return null;
+
+    const [datePart, timePart] = dateTimeString.split(" ");
+    const [year, month, day] = datePart.split("-").map(Number);
+    return new Date(Date.UTC(year, month - 1, day));
 }
